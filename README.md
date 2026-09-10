@@ -1,16 +1,16 @@
 # orca-tw (Orca 繁體中文語言套件)
 
-[Orca](https://github.com/stablyai/orca) 繁體中文（台灣，zh-TW）語言套件。
+[Orca](https://github.com/stablyai/orca) 繁體中文（台灣，zh-TW）語言套件，由 **胡峻銘 ([fuevaco](https://github.com/fuevaco))** 維護。
 
 ## 狀態與涵蓋範圍
 
-本語言套件目前收錄超過 **13,400 條字串**，全面涵蓋：
+本語言套件收錄超過 **13,600 條字串**，全面涵蓋：
 - 設定（Settings）與外掛管理
 - 側邊欄（Sidebar）與工作區（Workspace / Worktree）管理
 - 編輯器（Editor）與內建終端機（Terminal）
 - GitHub / GitLab / Linear / Jira 等服務整合
-- Agent 代理對話、執行階段（Runtime）與自動化工作流程
-- 行動端小幫手、控制面板、系統匣與應用程式選單
+- Agent 對話、執行環境（Runtime）與自動化工作流程
+- 行動版小幫手、控制面板、系統匣與應用程式選單
 
 尚未翻譯的新增字串會自動回退（Fallback）至 Orca 內建的英文翻譯。
 
@@ -18,8 +18,8 @@
 
 Orca 透過其外掛系統（Plugin System）探索語言套件：
 
-1. 開啟 Orca，在設定中的外掛（Plugins）新增來源，指向本儲存庫或本地目錄路徑（例如 `F:\orca-tw`）。
-2. 在 **Settings → Appearance → Language** 中選擇 **繁體中文 (台灣) — orca-tw**。
+1. 開啟 Orca，在 **Settings → Plugins** 中安裝本外掛（可選擇 Local folder 指向 `F:\orca-tw`，或輸入 Git URL `https://github.com/fuevaco/orca-tw.git#main`）。
+2. 在 **Settings → Appearance → Language** 中選擇 **繁體中文 (台灣) — fuevaco.orca-tw**。
 3. 重新啟動或重新整理介面以套用繁體中文。
 
 ## 語言套件建置原則

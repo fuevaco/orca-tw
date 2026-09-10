@@ -1,15 +1,15 @@
 {
-  "name": "Orca Traditional Chinese",
+  "name": "Orca 繁體中文語言套件 (胡峻銘)",
   "owner": "fuevaco",
   "plugins": [
     {
-      "id": "stablyai.orca-tw",
+      "id": "fuevaco.orca-tw",
       "source": {
         "kind": "git",
         "url": "https://github.com/fuevaco/orca-tw.git",
         "ref": "main"
       },
-      "description": "Traditional Chinese (Taiwan) translations for Orca navigation and features.",
+      "description": "胡峻銘維護的 Orca 繁體中文（台灣）語言套件。",
       "categories": ["languages"]
     }
   ]

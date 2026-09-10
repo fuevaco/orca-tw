@@ -1,10 +1,15 @@
 {
   "manifestVersion": 1,
   "id": "orca-tw",
-  "publisher": "stablyai",
+  "publisher": "fuevaco",
   "name": "繁體中文 (台灣)",
   "version": "1.0.0",
-  "description": "Traditional Chinese (Taiwan) translations for Orca navigation and features.",
+  "description": "胡峻銘維護的 Orca 繁體中文（台灣）語言套件。",
+  "author": {
+    "name": "胡峻銘",
+    "url": "https://github.com/fuevaco"
+  },
+  "repository": "https://github.com/fuevaco/orca-tw",
   "engines": { "orca": ">=1.4.0" },
   "pluginApi": 1,
   "contributes": {
@@ -12,4 +17,3 @@
   },
   "capabilities": []
 }
-
