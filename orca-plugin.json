@@ -1,15 +1,15 @@
 {
   "manifestVersion": 1,
-  "id": "orca-portuguese",
+  "id": "orca-tw",
   "publisher": "stablyai",
-  "name": "Português do Brasil",
+  "name": "繁體中文 (台灣)",
   "version": "1.0.0",
-  "description": "Brazilian Portuguese translations for common Orca navigation.",
-  "repository": "https://github.com/stablyai/orca-portuguese",
+  "description": "Traditional Chinese (Taiwan) translations for Orca navigation and features.",
   "engines": { "orca": ">=1.4.0" },
   "pluginApi": 1,
   "contributes": {
-    "languagePacks": [{ "locale": "pt-BR", "path": "locales/pt-BR.json" }]
+    "languagePacks": [{ "locale": "zh-TW", "path": "locales/zh-TW.json" }]
   },
   "capabilities": []
 }
+

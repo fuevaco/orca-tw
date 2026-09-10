@@ -1,77 +1,45 @@
-# orca-portuguese
+# orca-tw (Orca 繁體中文語言套件)
 
-Official Brazilian Portuguese (pt-BR) language pack for [Orca](https://github.com/stablyai/orca).
+[Orca](https://github.com/stablyai/orca) 繁體中文（台灣，zh-TW）語言套件。
 
-## Status
+## 狀態與涵蓋範圍
 
-The catalog contains **12,524 strings**, covering settings, sidebars, editor,
-terminal, GitHub/GitLab/Linear/Jira integrations, onboarding, mobile companion
-app, dashboard, system tray, and application menu.
+本語言套件目前收錄超過 **13,400 條字串**，全面涵蓋：
+- 設定（Settings）與外掛管理
+- 側邊欄（Sidebar）與工作區（Workspace / Worktree）管理
+- 編輯器（Editor）與內建終端機（Terminal）
+- GitHub / GitLab / Linear / Jira 等服務整合
+- Agent 代理對話、執行階段（Runtime）與自動化工作流程
+- 行動端小幫手、控制面板、系統匣與應用程式選單
 
-Missing translations fall back to Orca's English catalog automatically.
-Coverage varies with the Orca version as new UI strings are added. Inline CSS
-is omitted so the app uses its complete built-in styles.
+尚未翻譯的新增字串會自動回退（Fallback）至 Orca 內建的英文翻譯。
 
-## Installation
+## 安裝方式
 
-Orca discovers language packs through its plugin system. Point Orca at this
-repository (or a local checkout) as a plugin source, then select
-**pt-BR — orca-portuguese** from Settings → Appearance → Language.
+Orca 透過其外掛系統（Plugin System）探索語言套件：
 
-## How this pack was built
+1. 開啟 Orca，在設定中的外掛（Plugins）新增來源，指向本儲存庫或本地目錄路徑（例如 `F:\orca-tw`）。
+2. 在 **Settings → Appearance → Language** 中選擇 **繁體中文 (台灣) — orca-tw**。
+3. 重新啟動或重新整理介面以套用繁體中文。
 
-The English source (`en.json` from `stablyai/orca`,
-`src/renderer/src/i18n/locales/en.json`) was extracted, split into batches by
-UI namespace, and translated with an LLM-assisted, multi-pass process:
+## 語言套件建置原則
 
-1. Flatten the English catalog into `path -> string` pairs, excluding keys
-   under the plugin-protected namespace (`auto.components.settings.plugin*`,
-   enforced by Orca's own plugin artifact parser) and a handful of entries
-   that are actually inline CSS for animated marketing visuals, not
-   translatable prose.
-2. Translate in batches grouped by component/namespace, with a shared
-   style guide (informal `você` register, placeholders preserved verbatim,
-   brand names and established Brazilian dev-tooling English loanwords —
-   `branch`, `commit`, `worktree`, `workspace`, `pull request`, etc. — kept
-   untranslated, consistent with how GitHub/GitLab/VS Code are localized for
-   pt-BR).
-3. Cross-batch consistency pass: reconciled terminology that drifted between
-   independently translated batches (e.g. "Checks" vs "Verificações" vs
-   "Checagens" for the GitHub PR checks tab; "Mergeado" vs "Mesclado" for the
-   merged-PR/MR status badge — both normalized to match GitHub's own official
-   pt-BR localization).
-4. Validated against the same rules Orca's plugin loader enforces at runtime
-   (`parsePluginLanguagePackArtifact`): max 20,000 entries, max depth 16, no
-   dangerous/unsafe keys, no protected paths, no string over 8,192 chars.
+本套件基於 Orca 官方語言目錄進行台灣繁體中文本地化，遵循以下規範：
 
-Every translated string was reviewed for the rules above; no string was left
-identical to English except where that is the correct choice (brand names,
-technical loanwords, code/CLI literals, keyboard shortcuts).
+1. **符合台灣軟體工程慣用語**：
+   - `Workspace` → **工作區**、`Worktree` → **工作樹**
+   - `Repository` → **儲存庫**、`Branch` → **分支**、`Commit` → **提交**
+   - `Project` → **專案**、`Tab` → **分頁**、`Terminal` → **終端機**
+   - `Plugin` → **外掛**、`Settings` → **設定**、`Default` → **預設**
+   - `Memory` → **記憶體**、`Cache` → **快取**、`Server` → **伺服器**
+   - `Duplicate` → **建立副本**、`Copy` → **複製**、`Stage` → **暫存**
+2. **完整保護變數插值與指令**：
+   - 嚴格保留所有 `{{value0}}`、`{{endpoint}}`、`{{branch}}` 等插值佔位符。
+   - 保留 CLI 指令、參數及專有名詞（如 `--model sonnet`、`pnpm install`、`orca.yaml`、`/goal`、`origin`、`Ghostty`、`Antigravity`、`Claude`、`Codex`、`Gemini` 等）。
+3. **符合 Orca 外掛安全與載入規範**：
+   - 通過 `parsePluginLanguagePackArtifact` 嚴格檢驗：符合最大巢狀深度（<= 16）、最大條目數（<= 20,000）、排除設定安全保護鍵（`auto.components.settings.Plugin*`）及超長行內樣式，確保外掛載入零錯誤。
 
-## Known limitations
+## 貢獻指南
 
-A few upstream i18n design constraints can't be fixed from the translation
-side alone — flagging them here for visibility:
+歡迎提供勘誤與翻譯改善建議！歡迎針對 `locales/zh-TW.json` 提交 PR 或 Issue。
 
-- **Positional placeholder pluralization**: some English strings compose a
-  sentence from an English verb/noun injected via a positional placeholder
-  (e.g. `"{{value0}} PR #{{value1}}?"` where `{{value0}}` is `close`/`reopen`
-  in English, or `"session{{value1}}"` for English pluralization). Since
-  Portuguese conjugates verbs and pluralizes nouns differently than English,
-  these can't be made fully grammatically correct without named,
-  language-aware placeholders upstream. The translations preserve the
-  placeholders and produce the closest natural phrasing possible.
-- **`auto.components.status.bar.WorkspaceSpaceManagerPanel.5c6d25720c`** has
-  no pt-BR translation yet; it falls back to English automatically per
-  Orca's sparse-catalog policy.
-- A small number of ambiguous product-specific terms (e.g. "Conductor",
-  "Space" as used in `WorkspaceSpacePage`/`WorkspaceSpaceCompactPanel`) were
-  kept in English pending confirmation from the Orca team on whether they are
-  intentional feature/brand names or generic words that should be
-  translated.
-
-## Contributing
-
-Corrections and improvements welcome — please open a PR against
-`locales/pt-BR.json`, keeping the existing key structure and the style
-conventions above.
