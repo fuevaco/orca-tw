@@ -19,7 +19,7 @@
 Orca 透過其外掛系統（Plugin System）探索語言套件：
 
 1. 開啟 Orca，在 **Settings → Plugins** 中安裝本外掛（可選擇 Local folder 指向 `F:\orca-tw`，或輸入 Git URL `https://github.com/fuevaco/orca-tw.git#main`）。
-2. 在 **Settings → Appearance → Language** 中選擇 **繁體中文 (台灣) — fuevaco.orca-tw**。
+2. 在 **Settings → Appearance → Language** 中選擇 **繁體中文 (台灣) — fuevaco.zh-tw**。
 3. 重新啟動或重新整理介面以套用繁體中文。
 
 ## 語言套件建置原則
