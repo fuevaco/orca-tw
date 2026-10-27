@@ -1,0 +1,16 @@
+{
+  "name": "Orca 繁體中文語言套件",
+  "owner": "fuevaco",
+  "plugins": [
+    {
+      "id": "fuevaco.zh-tw",
+      "source": {
+        "kind": "git",
+        "url": "https://github.com/fuevaco/orca-tw.git",
+        "ref": "main"
+      },
+      "description": "fuevaco 維護的 Orca 繁體中文（台灣）語言套件。",
+      "categories": ["languages"]
+    }
+  ]
+}

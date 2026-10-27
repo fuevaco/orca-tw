@@ -1,0 +1,19 @@
+{
+  "manifestVersion": 1,
+  "id": "zh-tw",
+  "publisher": "fuevaco",
+  "name": "繁體中文 (台灣)",
+  "version": "1.1.0",
+  "description": "fuevaco 維護的 Orca 繁體中文（台灣）語言套件。",
+  "author": {
+    "name": "fuevaco",
+    "url": "https://github.com/fuevaco"
+  },
+  "repository": "https://github.com/fuevaco/orca-tw",
+  "engines": { "orca": ">=1.4.0" },
+  "pluginApi": 1,
+  "contributes": {
+    "languagePacks": [{ "locale": "zh-TW", "path": "locales/zh-TW.json" }]
+  },
+  "capabilities": []
+}
