@@ -6,8 +6,15 @@ import opencc
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-UPSTREAM_EN = r"C:\Users\genius\AppData\Local\Temp\orca-upstream\src\renderer\src\i18n\locales\en.json"
-UPSTREAM_ZH = r"C:\Users\genius\AppData\Local\Temp\orca-upstream\src\renderer\src\i18n\locales\zh.json"
+TEMP_DIR = os.environ.get("TEMP", r"C:\Users\genius\AppData\Local\Temp")
+candidate_upstream = [
+    os.path.join(TEMP_DIR, "orca-upstream"),
+    os.path.join(TEMP_DIR, "orca-inspect"),
+]
+upstream_base = next((d for d in candidate_upstream if os.path.isdir(d)), candidate_upstream[0])
+
+UPSTREAM_EN = os.path.join(upstream_base, "src", "renderer", "src", "i18n", "locales", "en.json")
+UPSTREAM_ZH = os.path.join(upstream_base, "src", "renderer", "src", "i18n", "locales", "zh.json")
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CURRENT_ZH_TW = os.path.join(BASE_DIR, "plugins", "zh-tw", "locales", "zh-TW.json")
 OUTPUT_ZH_TW = os.path.join(BASE_DIR, "plugins", "zh-tw", "locales", "zh-TW.json")
