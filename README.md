@@ -1,6 +1,6 @@
-# orca-tw (Orca 繁體中文語言套件)
+# orca-tw (Orca 外掛 Monorepo)
 
-[Orca](https://github.com/stablyai/orca) 繁體中文（台灣，zh-TW）語言套件，由 **[fuevaco](https://github.com/fuevaco)** 維護。
+這是由 **[fuevaco](https://github.com/fuevaco)** 維護的 [Orca](https://github.com/stablyai/orca) 外掛儲存庫。本儲存庫採用最新版 Orca 官方規範的 **Monorepo** 架構與 **`orca-catalog.json` (Catalog v2)** 進行多套件管理。
 
 > [!WARNING]
 > **使用須知與免責提示**：
@@ -17,9 +17,17 @@
 5. **維護與更新義務**：Orca 官方版本更新頻繁，維護者保留隨時修改、暫停或終止本專案更新之權利，不承擔即時同步官方更新之義務。
 6. **不開放社群回饋與技術支援**：本儲存庫純屬個人開發存檔與自用，**無意經營開源社群，亦不接受任何 Issue 回報、功能請求或 Pull Request（PR）**。相關回饋概不受理。
 
-## 狀態與涵蓋範圍
+## 本儲存庫包含的套件 (Monorepo Packages)
 
-本語言套件收錄超過 **17,000 條字串**（共 17,066 條可翻譯字串，19,179 條外掛結構條目），全面涵蓋：
+| 套件 ID | 目錄路徑 | 類型 | 說明 |
+| :--- | :--- | :--- | :--- |
+| **`fuevaco.zh-tw`** | [`plugins/zh-tw`](./plugins/zh-tw) | `interface-language` | Orca 繁體中文（台灣，zh-TW）介面語言套件 |
+
+---
+
+### `plugins/zh-tw`：繁體中文語言套件狀態
+
+收錄超過 **17,000 條字串**（共 17,066 條可翻譯字串，19,179 條外掛結構條目），全面涵蓋：
 - 設定（Settings）與外掛管理
 - 側邊欄（Sidebar）與工作區（Workspace / Worktree）管理
 - 編輯器（Editor）與內建終端機（Terminal）
@@ -29,13 +37,22 @@
 
 尚未翻譯的新增字串會自動回退（Fallback）至 Orca 內建的英文翻譯。
 
+---
+
 ## 安裝方式
 
-Orca 透過其外掛系統（Plugin System）探索語言套件：
+Orca 最新版透過外掛目錄（Plugin Catalog / Marketplace Source）進行套件探索：
 
-1. 開啟 Orca，在 **Settings → Plugins** 中安裝本外掛（可選擇 Local folder 指向本專案目錄，或輸入 Git URL `https://github.com/fuevaco/orca-tw.git#main`）。
-2. 在 **Settings → Appearance → Language** 中選擇 **繁體中文 (台灣) — fuevaco.zh-tw**。
-3. 重新啟動或重新整理介面以套用繁體中文。
+1. 開啟 Orca，前往 **Settings → Plugins → Marketplace Sources**（或 Manage Sources）。
+2. 點選 **Add Source**，輸入本儲存庫的 Git URL 與分支：
+   - **URL**: `https://github.com/fuevaco/orca-tw.git`
+   - **Ref / Branch**: `main`
+3. 新增後，Orca 會自動讀取根目錄的 `orca-catalog.json`，並在 Plugins 列表或 Marketplace 中顯示 **繁體中文 (台灣) — fuevaco.zh-tw**。
+4. 點選 **Install** 安裝完成後，前往 **Settings → Appearance → Language** 選擇 **繁體中文 (台灣)**。
+5. 重新啟動或重新整理介面以套用繁體中文。
+
+> [!NOTE]
+> 本機開發模式：亦可在 **Settings → Plugins → Local Development** 中直接將路徑指向本機的 `plugins/zh-tw` 目錄。
 
 ## 語言套件建置原則
 

@@ -1,5 +1,6 @@
 {
-  "manifestVersion": 1,
+  "manifestVersion": 2,
+  "execution": "data",
   "id": "zh-tw",
   "publisher": "fuevaco",
   "name": "繁體中文 (台灣)",
@@ -10,10 +11,16 @@
     "url": "https://github.com/fuevaco"
   },
   "repository": "https://github.com/fuevaco/orca-tw",
-  "engines": { "orca": ">=1.4.0" },
-  "pluginApi": 1,
+  "engines": {
+    "orca": ">=1.4.0"
+  },
   "contributes": {
-    "languagePacks": [{ "locale": "zh-TW", "path": "locales/zh-TW.json" }]
+    "languagePacks": [
+      {
+        "locale": "zh-TW",
+        "path": "locales/zh-TW.json"
+      }
+    ]
   },
   "capabilities": []
 }

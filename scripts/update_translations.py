@@ -8,8 +8,9 @@ sys.stdout.reconfigure(encoding='utf-8')
 
 UPSTREAM_EN = r"C:\Users\genius\AppData\Local\Temp\orca-upstream\src\renderer\src\i18n\locales\en.json"
 UPSTREAM_ZH = r"C:\Users\genius\AppData\Local\Temp\orca-upstream\src\renderer\src\i18n\locales\zh.json"
-CURRENT_ZH_TW = r"F:\Orca_繁中語言套件\locales\zh-TW.json"
-OUTPUT_ZH_TW = r"F:\Orca_繁中語言套件\locales\zh-TW.json"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CURRENT_ZH_TW = os.path.join(BASE_DIR, "plugins", "zh-tw", "locales", "zh-TW.json")
+OUTPUT_ZH_TW = os.path.join(BASE_DIR, "plugins", "zh-tw", "locales", "zh-TW.json")
 
 TRANSLATABLE_PLUGIN_CHROME = {
     'auto.components.settings.PluginsSettingsSection.title',
