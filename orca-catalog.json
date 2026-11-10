@@ -18,7 +18,7 @@
       "releases": [
         {
           "version": "1.1.0",
-          "commit": "8e58bb1af816dbaf5ad088268f9df0e8e2735d9e",
+          "commit": "e8b7545e89e93e95a3f39548e94aff65a1daf9f3",
           "contentHash": "d1277ddbbc405194aefbc23babb4580e8ea5756a9581def70f0ad7883a2b32b1",
           "execution": "data",
           "minimumOrca": "1.4.0",
